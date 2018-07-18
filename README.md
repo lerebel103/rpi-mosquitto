@@ -35,7 +35,7 @@ make build
 ### Testing
 You can easily test that the broker works correctly by starting it and using two test clients as publisher and subscriber respectively.
 
-In a first terminal:
+In a first Terminal:
 ```
 # Start the broker
 ./bin/mosquitto.sh
