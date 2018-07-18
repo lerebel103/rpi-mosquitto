@@ -1,6 +1,6 @@
 # rpi-mosquitto
 
-Raspberry Pi compatible Docker Image with mosquitto MQTT broker.
+Raspberry Pi3 compatible Docker Image based on `resin/armv7hf-debian:stretch` with mosquitto MQTT broker.
 Based upon [rpi-mosquitto](https://github.com/pascaldevink/rpi-mosquitto), all credit to @pascaldevink.
 
 ## How to run
