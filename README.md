@@ -11,11 +11,17 @@ docker run -tip 1883:1883 -p 9001:9001 lerebel103/rpi-mosquitto
 
 Exposes Port 1883 (MQTT) 9001 (Websocket MQTT)
 
-Alternatively you can use volumes to make the changes persistent and change the configuration. A start script is provided as `bin/mosquitto` to do just that a faciliated testing.
+Alternatively you can use volumes to make the changes persistent and change the configuration. A start script is provided as `bin/mosquitto.sh` to do just that a faciliated testing.
 
 ## How to create this image
 
 Run all the commands from within the project root directory.
+
+# Docker version requirements
+Please make sure you have a rececent version of docker.io installed:
+```
+curl -sSL https://get.docker.com | sh
+```
 
 ### Build the Docker Image
 ```bash
