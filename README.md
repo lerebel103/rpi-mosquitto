@@ -1,12 +1,12 @@
 # rpi-mosquitto
 
 Raspberry Pi compatible Docker Image with mosquitto MQTT broker.
-Based upon [docker-mosquitto](https://github.com/toke/docker-mosquitto).
+Based upon [rpi-mosquitto](https://github.com/pascaldevink/rpi-mosquitto), all credit to @pascaldevink.
 
 ## How to run
 
 ```
-docker run -tip 1883:1883 -p 9001:9001 pascaldevink/rpi-mosquitto
+docker run -tip 1883:1883 -p 9001:9001 lerebel103/rpi-mosquitto
 ```
 
 Exposes Port 1883 (MQTT) 9001 (Websocket MQTT)
@@ -27,7 +27,7 @@ docker run -ti -p 1883:1883 -p 9001:9001 \
 -v /srv/mqtt/config:/mqtt/config:ro \
 -v /srv/mqtt/log:/mqtt/log \
 -v /srv/mqtt/data/:/mqtt/data/ \
---name mqtt pascaldevink/rpi-mosquitto
+--name mqtt lerebel103/rpi-mosquitto
 ```
 
 ## How to create this image
