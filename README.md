@@ -28,6 +28,28 @@ curl -sSL https://get.docker.com | sh
 make build
 ```
 
+### Testing
+You can easily test that the broker works correctly by starting it and using two test clients as publisher and subscriber respectively.
+
+In a first terminal:
+```
+# Start the broker
+./bin/mosquitto.sh
+```
+
+In a second Terminal:
+```
+# Start a subscriber client on "test" topic
+docker run -it --rm lerebel103/rpi-mosquitto mosquitto_sub -h <host ip> -t test
+```
+In a third Terminal:
+```
+# Start a publish client on "test" topic, sending "Hello There!"
+docker run -it --rm lerebel103/rpi-mosquitto mosquitto_pub -h <host ip> -t test -m "Hello There!"
+```
+
+All going well, your subscriber receive the published message.
+
 #### Push the Docker Image to the Docker Hub
 * First use a `docker login` with username, password and email address
 * Second push the Docker Image to the official Docker Hub

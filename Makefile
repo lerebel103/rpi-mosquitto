@@ -11,9 +11,6 @@ build:
 push:
 	docker push $(DOCKER_IMAGE_NAME)
 
-test:
-	docker run --rm $(DOCKER_IMAGE_TAGNAME) /bin/echo "Success."
-
 rmi:
 	docker rmi -f $(DOCKER_IMAGE_TAGNAME)
 
