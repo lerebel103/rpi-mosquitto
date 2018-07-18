@@ -17,7 +17,7 @@ Alternatively you can use volumes to make the changes persistent and change the 
 
 Run all the commands from within the project root directory.
 
-# Docker version requirements
+### Docker version requirements
 Please make sure you have a rececent version of docker.io installed:
 ```
 curl -sSL https://get.docker.com | sh
