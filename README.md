@@ -44,12 +44,12 @@ In a first Terminal:
 In a second Terminal:
 ```
 # Start a subscriber client on "test" topic
-docker run -it --rm lerebel103/rpi-mosquitto mosquitto_sub -h <host ip> -t test
+docker run --net=host -it --rm lerebel103/rpi-mosquitto mosquitto_sub -t test
 ```
 In a third Terminal:
 ```
 # Start a publish client on "test" topic, sending "Hello There!"
-docker run -it --rm lerebel103/rpi-mosquitto mosquitto_pub -h <host ip> -t test -m "Hello There!"
+docker run --net=host -it --rm lerebel103/rpi-mosquitto mosquitto_pub -t test -m "Hello There!"
 ```
 
 All going well, your subscriber receive the published message.
