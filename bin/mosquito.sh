@@ -5,8 +5,9 @@
 HOST_MQTT_DIR=/srv/mqtt
 
 if [ ! -e $HOST_MQTT_DIR ]; then
-    sudo mkdir $HOST_MQTT_DIR
-    sudo mkdir $HOST_MQTT_DIR/config/conf.d
+    sudo mkdir -p $HOST_MQTT_DIR/config/conf.d
+    sudo mkdir $HOST_MQTT_DIR/log
+    sudo mkdir $HOST_MQTT_DIR/data
     sudo chown -R $USER $HOST_MQTT_DIR
     sudo chgrp -R daemon $HOST_MQTT_DIR
     sudo chmod -R g+rw $HOST_MQTT_DIR
