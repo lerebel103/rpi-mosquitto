@@ -1,0 +1,15 @@
+[Unit]
+Description=Mosquitto MQTT Broker
+After=network.target auditd.service
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/rpi-mosquitto
+ExecStart=/home/pi/rpi-mosquitto/bin/service.sh
+PIDFile=/tmp/mosquitto.pid
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+Alias=mosquitto.service
