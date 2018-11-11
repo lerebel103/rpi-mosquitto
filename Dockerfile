@@ -15,7 +15,7 @@ RUN cd /tmp && wget https://github.com/warmcat/libwebsockets/archive/v3.0.1.tar.
 RUN cd /tmp/libwebsockets-3.0.1 && mkdir build && cd build && cmake .. && make install
 
 # Now for mosquitto
-RUN cd /tmp && wget https://mosquitto.org/files/source/mosquitto-1.5.3.tar.gz && tar xvxf mosquitto-1.5.3.tar.gz
+RUN wget https://mosquitto.org/files/source/mosquitto-1.5.3.tar.gz && tar xvxf mosquitto-1.5.3.tar.gz
 RUN cd mosquitto-1.5.3 && make WITH_WEBSOCKETS=yes && make install
 
 RUN adduser --system --disabled-password --disabled-login mosquitto
@@ -25,4 +25,4 @@ COPY config /mqtt/config
 VOLUME ["/mqtt/config", "/mqtt/data", "/mqtt/log"]
 
 EXPOSE 1883 9001
-CMD /usr/sbin/mosquitto -c /mqtt/config/mosquitto.conf
+CMD LD_LIBRARY_PATH=/usr/local/lib /usr/local/sbin/mosquitto -c /mqtt/config/mosquitto.conf
